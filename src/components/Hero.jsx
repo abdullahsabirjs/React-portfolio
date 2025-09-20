@@ -1,3 +1,4 @@
+import profile from "../assets/profile.png";
 export default function Hero() {
   return (
     <section className="bg-gradient-to-r from-yellow-50 to-white py-20">
@@ -8,7 +9,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
             Hi, I'm{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-yellow-500">
-              Your Name
+            Abdullah
             </span>
           </h1>
 
@@ -23,7 +24,7 @@ export default function Hero() {
               href="/projects"
               className="px-6 py-3 rounded-lg shadow-lg bg-gradient-to-r from-red-600 to-yellow-500 text-white font-medium hover:scale-105 transform transition"
             >
-              🚀 View Projects
+              View Projects
             </a>
             <a
               href="/contact"
@@ -37,7 +38,7 @@ export default function Hero() {
         {/* Right Profile Image */}
         <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-xl border-4 border-red-500 hover:scale-105 transform transition">
           <img
-            src="/assets/profile.jpg"
+            src={profile}
             alt="Profile"
             className="w-full h-full object-cover"
           />

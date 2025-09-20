@@ -30,7 +30,7 @@ export default function Navbar() {
             to="/"
             className="text-2xl font-extrabold bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent"
           >
-            YourName
+            Muhammad Abdullah
           </Link>
 
           {/* Desktop Links */}
