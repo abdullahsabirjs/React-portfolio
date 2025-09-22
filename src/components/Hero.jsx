@@ -9,7 +9,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
             Hi, I'm{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-yellow-500">
-            Abdullah
+            Muhammad Abdullah
             </span>
           </h1>
 
@@ -21,7 +21,7 @@ export default function Hero() {
           {/* Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <a
-              href="/projects"
+              href="/Projects"
               className="px-6 py-3 rounded-lg shadow-lg bg-gradient-to-r from-red-600 to-yellow-500 text-white font-medium hover:scale-105 transform transition"
             >
               View Projects
