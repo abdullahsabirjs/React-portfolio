@@ -12,7 +12,7 @@ export default function Footer() {
         {/* right social links */}
         <div className="flex gap-6">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/abdullahsabirjs"
             target="_blank"
             rel="noreferrer"
             className="text-white/90 hover:text-yellow-200 transition-colors text-sm md:text-base"
@@ -20,7 +20,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/muhammad-abdullah-sabir-b44182288/"
             target="_blank"
             rel="noreferrer"
             className="text-white/90 hover:text-yellow-200 transition-colors text-sm md:text-base"

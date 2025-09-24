@@ -19,15 +19,15 @@ export default function About() {
         {/* About Content */}
         <div className="flex-1 text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-            Your Name
+            Muhammad Abdullah
           </h2>
           <p className="mt-4 text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl">
             I'm a{" "}
             <span className="font-semibold text-red-600">
-              Frontend Developer
+              MERN Stack Developer
             </span>{" "}
-            focused on building responsive, accessible, and visually stunning web apps.  
-            Passionate about React, clean UI, and smooth user experiences.
+            — Transforming visions into web experiences with MERN Stack.  
+            Frontend to backend, I build it all.
           </p>
 
           {/* Skills */}
@@ -36,20 +36,36 @@ export default function About() {
               Skills & Tools
             </h3>
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
+              {/* Highlighted Skills */}
               <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
-                React
-              </span>
-              <span className="px-4 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm">
-                JavaScript
-              </span>
-              <span className="px-4 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm">
-                Tailwind CSS
-              </span>
-              <span className="px-4 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm">
                 HTML
               </span>
-              <span className="px-4 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm">
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
                 CSS
+              </span>
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
+                JavaScript
+              </span>
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
+                React.js
+              </span>
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
+                Node.js
+              </span>
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
+                Express.js
+              </span>
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
+                MongoDB
+              </span>
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
+                Firebase
+              </span>
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
+                Tailwind CSS
+              </span>
+              <span className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-full text-sm shadow-md">
+                GitHub
               </span>
             </div>
           </div>
