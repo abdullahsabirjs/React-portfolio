@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import resume from "../assets/resume.pdf";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function Navbar() {
             <NavItem to="/contact">Contact</NavItem>
 
             <a
-              href="/resume.pdf"
+              href={resume}
               target="_blank"
               rel="noreferrer"
               className="ml-2 px-4 py-2 rounded-lg bg-gradient-to-r from-red-600 to-yellow-500 text-white text-sm shadow-md hover:scale-105 transition"

@@ -1,42 +1,61 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
 
-  function validate() {
-    const errs = {};
-    if (!form.name.trim()) errs.name = "Name is required";
-    if (!form.email.trim()) errs.email = "Email is required";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) errs.email = "Email is invalid";
-    if (!form.message.trim()) errs.message = "Message cannot be empty";
-    return errs;
-  }
+    const formData = new FormData(event.target);
+    formData.append("access_key", "51813a83-0a10-4898-a9ed-4f549a7bd440");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const v = validate();
-    setErrors(v);
-    if (Object.keys(v).length === 0) {
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    setLoading(false);
+
+    if (res.success) {
       setSent(true);
-      setForm({ name: "", email: "", message: "" });
+      event.target.reset();
       setTimeout(() => setSent(false), 4000);
     }
-  }
+  };
 
   return (
-    <section className="max-w-3xl mx-auto py-20 px-6">
-      <h2 className="text-4xl font-extrabold text-center mb-10 text-gray-900">
-        <span className="bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent">
-          Contact Me
-        </span>
-      </h2>
+    <section className="max-w-6xl mx-auto py-20 px-6 grid md:grid-cols-2 gap-12 items-start">
+      
+      {/* Left: Contact Info */}
+      <div className="space-y-6 text-center md:text-left">
+        <h2 className="text-4xl font-extrabold text-gray-900">
+          <span className="bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent">
+            Get In Touch
+          </span>
+        </h2>
+        <p className="text-lg text-gray-700">
+          Feel free to reach out via the form or directly through email/phone.
+        </p>
+        <div className="space-y-3 text-gray-800">
+          <p>
+            📧 <span className="font-semibold">mailk1abdullah892@gmail.com</span>
+          </p>
+          <p>
+            📱 <span className="font-semibold">+92 312-6116557</span>
+          </p>
+        </div>
+      </div>
 
+      {/* Right: Contact Form */}
       <form
         onSubmit={handleSubmit}
         className="bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-8 space-y-6"
@@ -44,56 +63,49 @@ export default function Contact() {
         {/* Name */}
         <div>
           <input
+            type="text"
             name="name"
-            value={form.name}
-            onChange={handleChange}
             placeholder="Your name"
+            required
             className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500/60"
           />
-          {errors.name && (
-            <p className="text-sm text-red-500 mt-1">{errors.name}</p>
-          )}
         </div>
 
         {/* Email */}
         <div>
           <input
+            type="email"
             name="email"
-            value={form.email}
-            onChange={handleChange}
             placeholder="Your email"
+            required
             className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500/60"
           />
-          {errors.email && (
-            <p className="text-sm text-red-500 mt-1">{errors.email}</p>
-          )}
         </div>
 
         {/* Message */}
         <div>
           <textarea
             name="message"
-            value={form.message}
-            onChange={handleChange}
             placeholder="Your message"
             rows="6"
+            required
             className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500/60"
           />
-          {errors.message && (
-            <p className="text-sm text-red-500 mt-1">{errors.message}</p>
-          )}
         </div>
 
         {/* Submit Button */}
-        <button className="w-full px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-red-600 to-yellow-500 shadow-md hover:scale-105 transition transform">
-          Send Message
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-red-600 to-yellow-500 shadow-md hover:scale-105 transition transform"
+        >
+          {loading ? "Sending..." : "Send Message"}
         </button>
 
         {/* Success Message */}
         {sent && (
           <p className="text-sm text-green-600 mt-2 text-center">
-            ✅ Message sent (demo). I will connect this to an email service
-            later.
+            ✅ Message sent successfully! I will reply soon.
           </p>
         )}
       </form>
