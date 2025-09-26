@@ -19,13 +19,13 @@ export default function Project() {
       {/* Footer text */}
       <div className="text-center mt-12">
         <p className="text-gray-600 text-lg">
-          More exciting projects are on the way 🚀
+          More exciting projects are on the way.
         </p>
         <a
-          href="#contact"
+          href="https://github.com/abdullahsabirjs" target="blank"
           className="inline-block mt-6 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-red-600 to-yellow-500 shadow-lg hover:scale-105 transition-transform"
         >
-          Let’s Work Together
+          Explore More
         </a>
       </div>
     </section>
